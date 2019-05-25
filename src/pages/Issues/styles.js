@@ -4,11 +4,12 @@ import { colors, metrics } from '~/styles';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.lighter,
   },
 
   listContainer: {
-    backgroundColor: colors.lighter,
     padding: metrics.basePadding,
+    backgroundColor: colors.transparent,
   },
 
   textInputContainer: {

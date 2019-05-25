@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { colors, metrics } from '~/styles';
 
 const styles = StyleSheet.create({
-  container: {
+  container: state => ({
     flex: 1,
     backgroundColor: colors.white,
     padding: metrics.basePadding,
@@ -10,7 +10,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: metrics.baseRadius,
     marginBottom: metrics.baseMargin,
-  },
+    borderLeftColor: state === 'open' ? colors.success : colors.danger,
+    borderLeftWidth: 5,
+  }),
 
   avatar: {
     width: 50,

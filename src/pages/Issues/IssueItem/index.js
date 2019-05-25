@@ -10,7 +10,7 @@ import styles from './styles';
 
 const IssueItem = ({ issue, onPress }) => (
   <TouchableOpacity onPress={() => onPress(issue.html_url)}>
-    <View style={styles.container}>
+    <View style={styles.container(issue.state)}>
       <Image style={styles.avatar} source={{ uri: issue.user.avatar_url }} />
       <View style={styles.infoContainer}>
         <Text style={styles.name} numberOfLines={1} ellipsizeMode="tail">
@@ -26,6 +26,7 @@ const IssueItem = ({ issue, onPress }) => (
 IssueItem.propTypes = {
   issue: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
     user: PropTypes.shape({
       login: PropTypes.string.isRequired,
       avatar_url: PropTypes.string.isRequired,
